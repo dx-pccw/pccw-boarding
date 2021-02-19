@@ -1,0 +1,126 @@
+<h2>Checklist</h2>
+<section class="section">
+    <span class="list-section">
+      <mat-checkbox class="margin"
+                    [checked]="allComplete"
+                    [indeterminate]="someComplete()"
+                    (change)="setAll($event.checked)">
+        {{task.name}}
+      </mat-checkbox>
+    </span>
+    <span class="list-section">
+      <ul>
+        <li *ngFor="let subtask of task.subtasks">
+          <mat-checkbox [(ngModel)]="subtask.completed"
+                        (ngModelChange)="updateAllComplete()">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+
+  <section class="section">
+    <span class="list-section">
+      <mat-checkbox class="margin"
+                    [checked]="allComplete2"
+                    [indeterminate]="someComplete2()"
+                    (change)="setAll2($event.checked)">
+        {{task2.name}}
+      </mat-checkbox>
+    </span>
+    <span class="list-section">
+      <ul>
+        <li *ngFor="let subtask of task2.subtasks">
+          <mat-checkbox [(ngModel)]="subtask.completed"
+                        (ngModelChange)="updateAllComplete2()">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+
+  <section class="section">
+    <span class="list-section">
+      <mat-checkbox class="margin"
+                    [checked]="allComplete3"
+                    [indeterminate]="someComplete3()"
+                    (change)="setAll3($event.checked)">
+        {{task3.name}}
+      </mat-checkbox>
+    </span>
+    <span class="list-section">
+      <ul>
+        <li *ngFor="let subtask of task3.subtasks">
+          <mat-checkbox [(ngModel)]="subtask.completed"
+                        (ngModelChange)="updateAllComplete3()">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+
+  <section class="section">
+    <span class="list-section">
+      <mat-checkbox class="margin"
+                    [checked]="allComplete4"
+                    [indeterminate]="someComplete4()"
+                    (change)="setAll4($event.checked)">
+        {{task4.name}}
+      </mat-checkbox>
+    </span>
+    <span class="list-section">
+      <ul>
+        <li *ngFor="let subtask of task4.subtasks">
+          <mat-checkbox [(ngModel)]="subtask.completed"
+                        (ngModelChange)="updateAllComplete4()">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+
+  <section class="section">
+    <span class="list-section">
+      <mat-checkbox class="margin"
+                    [checked]="allComplete5"
+                    [indeterminate]="someComplete5()"
+                    (change)="setAll5($event.checked)">
+        {{task5.name}}
+      </mat-checkbox>
+    </span>
+    <span class="list-section">
+      <ul>
+        <li *ngFor="let subtask of task5.subtasks">
+          <mat-checkbox [(ngModel)]="subtask.completed"
+                        (ngModelChange)="updateAllComplete5()">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>
+
+  <section class="section">
+    <span class="list-section">
+      <mat-checkbox class="margin"
+                    [checked]="allComplete6"
+                    [indeterminate]="someComplete6()"
+                    (change)="setAll6($event.checked)">
+        {{task6.name}}
+      </mat-checkbox>
+    </span>
+    <span class="list-section">
+      <ul>
+        <li *ngFor="let subtask of task6.subtasks">
+          <mat-checkbox [(ngModel)]="subtask.completed"
+                        (ngModelChange)="updateAllComplete6()">
+            {{subtask.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>

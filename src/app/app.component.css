@@ -1,0 +1,11 @@
+table{
+    width: 100%;
+}
+
+a{
+    color: blue;
+}
+
+.mat-column-id {
+    max-width: 32px;
+  }

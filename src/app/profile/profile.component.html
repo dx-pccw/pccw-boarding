@@ -1,0 +1,35 @@
+<h2>Create Case</h2>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+	<label>
+    Name:
+    <input type="text" formControlName="name" required>
+  </label>
+
+	<label>
+    Position:
+    <input type="text" formControlName="position" required>
+  </label>
+
+	<label>
+    Start Date:
+    <input type="date" formControlName="start_date" required>
+  </label>
+
+	<label>
+    Manager:
+    <input type="text" formControlName="manager" required>
+  </label>
+
+	<button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+<hr>
+
+<p>
+	Form Value: {{ profileForm.value | json }}
+</p>
+
+
+<p>
+	Form Status: {{ profileForm.status }}
+</p>
