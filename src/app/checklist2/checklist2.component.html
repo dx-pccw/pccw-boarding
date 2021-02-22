@@ -104,25 +104,4 @@
     </span>
   </section>
 
-  <section class="section">
-    <span class="list-section">
-      <mat-checkbox class="margin"
-                    [checked]="allComplete6"
-                    [indeterminate]="someComplete6()"
-                    (change)="setAll6($event.checked)">
-        {{task6.name}}
-      </mat-checkbox>
-    </span>
-    <span class="list-section">
-      <ul>
-        <li *ngFor="let subtask of task6.subtasks">
-          <mat-checkbox [(ngModel)]="subtask.completed"
-                        (ngModelChange)="updateAllComplete6()">
-            {{subtask.name}}
-          </mat-checkbox>
-        </li>
-      </ul>
-    </span>
-  </section>
-
   <button>submit</button>

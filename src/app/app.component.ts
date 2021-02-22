@@ -5,25 +5,21 @@ import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { ChecklistComponent } from './checklist/checklist.component';
+import { Checklist2Component } from './checklist2/checklist2.component';
 import { ProfileComponent } from './profile/profile.component';
 
 export interface UsersData {
   name: string;
   type: string;
   id: number;
-  progress: number;
-  isExpanded :boolean
+  manager: string;
 }
 
 const ELEMENT_DATA: UsersData[] = [
-  {id: 1560608769632, name: 'Desmond', type: 'Onboarding', progress: 100,
-  isExpanded: false},
-  {id: 1560608765432, name: 'Tim', type: 'Onboarding', progress: 80,
-  isExpanded: false},
-  {id: 1560665743574, name: 'Chen', type: 'Onboarding', progress: 50,
-  isExpanded: false},
-  {id: 1634525636326, name: 'Ali', type: 'Onboarding', progress: 0,
-  isExpanded: false}
+  {id: 1560608769632, name: 'Desmond', type: 'Onboarding', manager: 'Alex'},
+  {id: 1560608765432, name: 'Tim', type: 'Onboarding', manager: 'Alex'},
+  {id: 1560665743574, name: 'Chen', type: 'Onboarding', manager: 'Alex'},
+  {id: 1634525636326, name: 'Ali', type: 'Onboarding', manager: 'Alex'}
 ];
 @Component({
   selector: 'app-root',
@@ -39,6 +35,7 @@ const ELEMENT_DATA: UsersData[] = [
 })
 export class AppComponent {
   displayedColumns: string[] = ['id', 'name', 'progress','action'];
+  //displayedColumns: string[] = ['id', 'name', 'progress','status','action'];
   dataSource = ELEMENT_DATA;
   
 
@@ -83,6 +80,21 @@ export class AppComponent {
 
   openDialog3(action: any,obj: any) {
     obj.action = action;
+    const dialogRef = this.dialog.open(Checklist2Component, {
+      width: '500px',
+      height: '500px',
+      data:obj
+    });
+
+    /*dialogRef.afterClosed().subscribe(result => {
+      if(result.event == 'View'){
+        this.addRowData(result.data);
+      }
+    });*/
+  }
+
+  openDialog4(action: any,obj: any) {
+    obj.action = action;
     const dialogRef = this.dialog.open(ProfileComponent, {
       width: '500px',
       height: '500px',
@@ -96,14 +108,13 @@ export class AppComponent {
     });*/
   }
 
-  addRowData(row_obj: { name: any; type: any; progress: any;}){
+  addRowData(row_obj: { name: any; type: any; manager: any;}){
     var d = new Date();
     this.dataSource.push({
       id:d.getTime(),
       name:row_obj.name,
       type:row_obj.type,
-      progress:row_obj.progress, 
-      isExpanded: false
+      manager:row_obj.manager
     });
     this.table.renderRows();
     

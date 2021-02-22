@@ -7,87 +7,58 @@ export interface Task {
 }
 
 @Component({
-  selector: 'app-checklist',
-  templateUrl: './checklist.component.html',
-  styleUrls: ['./checklist.component.css']
+  selector: 'app-checklist2',
+  templateUrl: './checklist2.component.html',
+  styleUrls: ['./checklist2.component.css']
 })
 
-export class ChecklistComponent{
+export class Checklist2Component{
 
   task: Task = {
-    name: 'Talent Acquisition',
+    name: 'Human Resources',
     completed: false,
     subtasks: [
-      {name: 'Announcement of New Joiner', completed: false},
-      {name: 'Office Tour', completed: false},
-      {name: 'Colleague Introduction', completed: false},
-      {name: 'HR_PR to create email account', completed: false}
+      {name: 'Confirmation on employee last working day', completed: false},
+      {name: 'Notify TA team', completed: false},
+      {name: 'Exit Interview Form', completed: false},
+      {name: 'Exit Clearance Form', completed: false},
+      {name: 'Filing', completed: false}
     ]
   };
 
   task2: Task = {
-    name: 'Human Resources',
+    name: 'Administration',
     completed: false,
     subtasks: [
-      {name: 'Onboarding Forms', completed: false},
-      {name: 'Onboarding Training', completed: false},
-      {name: 'Create Personal Files', completed: false},
-      {name: 'Orientation', completed: false},
-      {name: 'Welcome Kits', completed: false},
-      {name: 'WhatsApp Group', completed: false},
-      {name: 'Insurance', completed: false},
-      {name: 'Leave Record', completed: false},
-      {name: 'Org Chart', completed: false},
-      {name: 'Payroll Information', completed: false},
-      {name: 'Staff ID Card', completed: false}
+      {name: 'Acknowledge received of company asses', completed: false}
     ]
   };
   
   task3: Task = {
-    name: 'Admin Operation',
+    name: 'Information Technology',
     completed: false,
     subtasks: [
-      {name: 'Timesheet Name List', completed: false},
-      {name: 'EKP Account Application', completed: false}
+      {name: 'Acknowledge received of Laptop', completed: false},
+      {name: 'Acknowledge received of PC', completed: false},
+      {name: 'Acknowledge received of Mouse', completed: false},
+      {name: 'Delete employee name from distribution list', completed: false}
     ]
   };
 
   task4: Task = {
-    name: 'Administration',
+    name: 'Hiring Manager',
     completed: false,
     subtasks: [
-      {name: 'Workstation', completed: false},
-      {name: 'Thumbprint access', completed: false},
-      {name: 'Business card', completed: false},
-      {name: 'Building access card', completed: false},
-      {name: 'Season Parking', completed: false},
-      {name: 'Stationeries', completed: false},
-      {name: 'Update Floor Plan', completed: false},
-      {name: 'Update Phone Directory', completed: false}
+      {name: 'Agreed on employee last working day', completed: false},
+      {name: 'Acknowledge received of documents/files', completed: false}
     ]
   };
 
   task5: Task = {
-    name: 'Information Technology',
+    name: 'Admin Operation',
     completed: false,
     subtasks: [
-      {name: 'Laptop/PC', completed: false},
-      {name: 'Company Email', completed: false},
-      {name: 'Printer', completed: false},
-      {name: 'Direct Phone Line', completed: false},
-      {name: 'Distribution List', completed: false},
-      {name: 'Inventory List', completed: false}
-    ]
-  };
-
-  task6: Task = {
-    name: 'Hiring Manager',
-    completed: false,
-    subtasks: [
-      {name: 'Briefing on Job Scope/Task', completed: false},
-      {name: 'Assign Buddy/Mentor', completed: false},
-      {name: 'KPI Setup', completed: false},
-      {name: 'Welcome Lunch', completed: false}
+      {name: 'Remove employee name from Timesheet', completed: false}
     ]
   };
 
@@ -96,7 +67,6 @@ export class ChecklistComponent{
   allComplete3: boolean = false;
   allComplete4: boolean = false;
   allComplete5: boolean = false;
-  allComplete6: boolean = false;
 
   updateAllComplete() {
     this.allComplete = this.task.subtasks != null && this.task.subtasks.every(t => t.completed);
@@ -195,26 +165,6 @@ export class ChecklistComponent{
       return;
     }
     this.task5.subtasks.forEach(t => t.completed = completed);
-  }
-
-  
-  updateAllComplete6() {
-    this.allComplete6 = this.task6.subtasks != null && this.task6.subtasks.every(t => t.completed);
-  }
-
-  someComplete6(): boolean {
-    if (this.task6.subtasks == null) {
-      return false;
-    }
-    return this.task6.subtasks.filter(t => t.completed).length > 0 && !this.allComplete6;
-  }
-
-  setAll6(completed: boolean) {
-    this.allComplete6 = completed;
-    if (this.task6.subtasks == null) {
-      return;
-    }
-    this.task6.subtasks.forEach(t => t.completed = completed);
   }
 
   /*onSubmit() {

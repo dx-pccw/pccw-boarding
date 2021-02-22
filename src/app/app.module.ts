@@ -18,6 +18,8 @@ import { TabBoxComponent } from './tab-box/tab-box.component';
 import { ChecklistComponent } from './checklist/checklist.component';
 import {MatSelectModule} from '@angular/material/select';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { Checklist2Component } from './checklist2/checklist2.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ProfileComponent } from './profile/profile.component';
     DialogBoxComponent,
     TabBoxComponent,
     ChecklistComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    Checklist2Component
   ],
   imports: [
     BrowserModule,

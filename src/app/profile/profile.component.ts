@@ -23,6 +23,7 @@ export class ProfileComponent{
     start_date: [this.date.start_date, [Validators.required]],
     manager: ['', Validators.required]
   });
+  http: any;
 
   constructor(private fb: FormBuilder) { }
 
@@ -31,5 +32,15 @@ export class ProfileComponent{
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
   }
-
+/*
+  onSubmit(): void{
+    const formObj ={
+     name: this.profileForm.value.name,
+     position: this.profileForm.value.position,
+     start_date: this.profileForm.value.start_date,
+     manager: this.profileForm.value.manager,
+    }
+   this.http.post('http://127.0.0.1:3307/root', formObj).subscribe(res =>
+ }
+*/
 }
